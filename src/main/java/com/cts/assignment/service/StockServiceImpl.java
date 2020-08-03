@@ -24,7 +24,7 @@ public class StockServiceImpl implements StockService {
 		this.StockRepository = StockRepository;
 	}
 
-	@CachePut(value = "stocks", key = "#stock.stockid")
+	//@CachePut(value = "stocks", key = "#stock.stockid")
 	@Override
 	public Stock registerStock(Stock stock) throws StockAlreadyExistsException {
 		stock = StockRepository.save(stock);
@@ -35,7 +35,7 @@ public class StockServiceImpl implements StockService {
 		}
 	}
 
-	@CachePut(value = "stocks", key = "#stock.stockid")
+	//@CachePut(value = "stocks", key = "#stock.stockid")
 	@Override
 	public Stock updateStock(String stockId, Stock stock) throws StockNotFoundException {
 		StockRepository.save(stock);
@@ -43,7 +43,7 @@ public class StockServiceImpl implements StockService {
 
 	}
 
-	@CacheEvict(value = "stocks", allEntries = true)
+	//@CacheEvict(value = "stocks", allEntries = true)
 	@Override
 	public boolean deleteStock(String stockId) throws StockNotFoundException {
 		try {
@@ -55,7 +55,7 @@ public class StockServiceImpl implements StockService {
 		return true;
 	}
 
-	@Cacheable(value = "stocks", key = "#stockid")
+	//@Cacheable(value = "stocks", key = "#stockid")
 	@Override
 	public Stock getStockById(String stockid) throws StockNotFoundException {
 		return StockRepository.findById(stockid).get();
