@@ -2,6 +2,12 @@ package com.cts.assignment.controller;
 
 
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +25,8 @@ import com.cts.assignment.exception.UserNotFoundException;
 import com.cts.assignment.model.User;
 import com.cts.assignment.service.UserService;
 
-//import io.jsonwebtoken.Jwts;
-//import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 @RestController
 public class UserController {
@@ -43,7 +49,7 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.CREATED);
 	}
 
-	/**
+	
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody User user) throws ServletException {
 		Map<String, String> map = new HashMap<>();
@@ -51,7 +57,7 @@ public class UserController {
 		String jwtToken = "";
 
 		try {
-			jwtToken = getToken(user.getUsername(), user.getPassword());
+			//jwtToken = getToken(user.getUsername(), user.getPassword());
 			map.clear();
 			map.put("message", "Successfully logged in ...");
 			map.put("token", jwtToken);
@@ -65,7 +71,7 @@ public class UserController {
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
 
-**/
+
 	@PutMapping("/user/{id}")
 	public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody User user) {
 		try {
@@ -115,7 +121,6 @@ public class UserController {
 		}
 	}
 
-	/**
 	public String getToken(String username, String password) throws Exception {
 
 		if (username == null || password == null) {
@@ -137,5 +142,5 @@ public class UserController {
 		return jwtToken;
 	}
 	
-	**/
+	
 }

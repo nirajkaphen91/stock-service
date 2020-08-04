@@ -1,6 +1,7 @@
 package com.cts.assignment.controller;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -21,7 +22,6 @@ import org.springframework.http.ResponseEntity;
 import com.cts.assignment.exception.UserAlreadyExistsException;
 import com.cts.assignment.exception.UserNotFoundException;
 import com.cts.assignment.model.User;
-import com.cts.assignment.repository.UserRepository;
 import com.cts.assignment.service.UserServiceImpl;
 
 public class UserControllerTest {
