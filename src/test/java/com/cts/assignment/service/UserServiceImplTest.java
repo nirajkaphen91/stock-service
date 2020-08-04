@@ -79,4 +79,11 @@ public class UserServiceImplTest {
 		User fetchedUser = userService.getUserById(user.getUsername());
 		assertEquals(user, fetchedUser);
 	}
+	
+	@Test
+	public void findByIdAndPassword() throws UserNotFoundException {
+		when(userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword())).thenReturn(user);
+		User fetchedUser = userService.findByIdAndPassword(user.getUsername(), user.getPassword());
+		assertEquals(user, fetchedUser);
+	}
 }

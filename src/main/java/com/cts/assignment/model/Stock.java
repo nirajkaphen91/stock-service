@@ -21,14 +21,14 @@ public class Stock implements Serializable {
 	public Stock() {
 	}
 
-	public Stock(String stockid, String name, double costprice, double sellingprice, int count, String description) {
-		this.stockid = stockid;
-		this.name = name;
-		this.costprice = costprice;
-		this.sellingprice = sellingprice;
-		this.count = count;
-		this.description = description;
-	}
+//	public Stock(String stockid, String name, double costprice, double sellingprice, int count, String description) {
+//		this.stockid = stockid;
+//		this.name = name;
+//		this.costprice = costprice;
+//		this.sellingprice = sellingprice;
+//		this.count = count;
+//		this.description = description;
+//	}
 
 	public String getStockid() {
 		return stockid;
@@ -77,10 +77,10 @@ public class Stock implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	@Override
-	public String toString() {
-		return "Stock [stockid=" + stockid + ", name=" + name + ", costprice=" + costprice + ", sellingprice="
-				+ sellingprice + ", count=" + count + ", description=" + description + "]";
-	}
+//
+//	@Override
+//	public String toString() {
+//		return "Stock [stockid=" + stockid + ", name=" + name + ", costprice=" + costprice + ", sellingprice="
+//				+ sellingprice + ", count=" + count + ", description=" + description + "]";
+//	}
 }

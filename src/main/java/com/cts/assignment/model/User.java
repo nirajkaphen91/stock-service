@@ -22,12 +22,12 @@ public class User implements Serializable {
 
 	}
 
-	public User(String username, String name, String password) {
-		this.username = username;
-		this.name = name;
-		this.password = password;
-		this.date = new Date();
-	}
+//	public User(String username, String name, String password) {
+//		this.username = username;
+//		this.name = name;
+//		this.password = password;
+//		this.date = new Date();
+//	}
 
 	public String getUsername() {
 		return username;
@@ -61,9 +61,9 @@ public class User implements Serializable {
 		this.date = date;
 	}
 
-	@Override
-	public String toString() {
-		return "User [username=" + username + ", name=" + name + ", password=" + password + ", date=" + date + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "User [username=" + username + ", name=" + name + ", password=" + password + ", date=" + date + "]";
+//	}
 
 }
